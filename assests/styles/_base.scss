@@ -1,50 +1,49 @@
-.container{
+.container {
     max-width: 1200px;
     margin: 0 auto;
 }
-.header{
-    .header-content{
-        display: flex;
-        flex-direction: column;
-        .header-headline{
-            display: flex;
-            align-items: center;
-            .header__dropdown{
+
+.header {
+    .header-content {
+        .header-headline {
+            @include center(align);
+
+            .header__dropdown {
                 margin-left: 385px;
                 margin-right: 70px;
+
                 border: none;
                 outline: none;
             }
-            .header__call{
+
+            .header__call {
                 margin-left: 100px;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                .call__link{
-                    font-weight: 600;
-                    font-size: $fs-m+2;
-                    line-height: 23px;
+                @include center(column);
+
+                .call__link {
+                    @include typography(18px, 600, 23px);
                     color: $second-color;
                     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
                 }
-                .call__subtitle{
-                font-size: $fs-xs;
-                line-height: 15px;
-                color: $black;                
+
+                .call__subtitle {
+                    @include typography(12px, 400, 15px);
+                    color: $black;
                 }
             }
         }
-        .nav{
+
+        .nav {
             margin-top: 20px;
-            .nav__list{
-                display: flex;
-                justify-content: space-between;
-                .nav__item{
-                    font-size: $fs-s;
-                    font-weight: 500;
-                    line-height: 18px;
+
+            .nav__list {
+                @include space(between);
+
+                .nav__item {
+                    @include typography(16px, 500, 18px);
+
                     color: $black;
-                    .nav__link{
+                    .nav__link {
                         @extend .nav__item;
                     }
                 }
@@ -52,32 +51,91 @@
         }
     }
 }
-.social-nav{
+
+.social-nav {
     display: flex;
-    .social__link{
+
+    .social__link {
         margin: 0px 5px;
-        .social__img{
-                        &:hover{
+
+        .social__img {
+            &:hover {
                 fill: $second-color;
-            }      
-            path{
-            &:hover{
-                fill: $second-color;
-            }                
+            }
+
+            path {
+                &:hover {
+                    fill: $second-color;
+                }
             }
 
         }
     }
 }
-.footer{
-    height: 225px;
-    background-color: $primary-color;
+
+.footer {
     margin-top: 500px;
-    .footer__content{
+    height: 225px;
+
+    background-color: $primary-color;
+
+    .footer__content {
         display: flex;
-        .footer__nav{
-            display: flex;
-            flex-direction: column;
+
+        .footer__wrapper{
+            margin-bottom: 25px;
+            .footer-logo{
+                margin-bottom: 25px;
+            }
+            .footer__call-link {
+                @include typography(18px, 600, 23px);
+                color: $black;
+            }
+
+            .footer__box {
+                display: flex;
+            }
+
+            .footer__mail {
+                margin-top: 15px;
+
+                .footer__mail-link {
+                    @include typography(14px, 600, 18px);
+                    color: $black;
+                }
+
+                .footer__mail-subtitle {
+                    @include typography(14px, 400, 18px)
+                }
+            }
+
+            .footer__mail:last-child {
+                margin-left: 30px;
+            }
+
+        }
+        .footer__wrapper:nth-child(2){
+            margin: 19px 0px 0px 45px;
+            .footer__title{
+                @include typography(14px, 600, 18px);
+                margin-bottom: 20px;
+            }
+            .footer__text{
+                @include typography(14px, 400, 30px)
+            }
+        }
+        .footer__nav {
+            margin: 55px 0px 0px 130px;
+            @include flex(column);
+            .footer__nav-link{
+                @include typography(14px, 600, 30px);
+                color: $black;
+            }
+            .footer__social-nav{
+                margin-top: 20px;
+            }
         }
     }
+
+
 }

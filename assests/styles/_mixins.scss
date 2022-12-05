@@ -1,13 +1,54 @@
-@mixin flex-center($d: row) {
-    display: flex;
+@mixin center($d) {
+  display: flex;
+
+  @if($d == justify){
+    justify-content: center;
+  }
+
+  @if($d == align){
+    align-items: center;
+  }
+
+  @if($d == column){
+    flex-direction: column;
+    align-items: center;
+  }
+
+  @if($d == center){
     justify-content: center;
     align-items: center;
-  
-    @if ($d == column) {
-      flex-direction: column;
-    }
   }
-  
+}
+
+@mixin space ($s){
+  display: flex;
+  @if($s == around){
+    justify-content: space-around;
+  }
+  @if($s == between){
+    justify-content: space-between;
+  }
+  @if($s == evenly){
+    justify-content: space-evenly
+  }
+}
+
+@mixin flex($f){
+  display: flex;
+  @if($f == row){
+    flex-direction: row;
+  }
+  @if($f == column){
+    flex-direction: column
+  }
+}
+
+@mixin typography($fs, $fw, $fh){
+  font-size: rem($fs);
+  font-weight: $fw;
+  line-height: rem($fh);
+}
+
   @mixin placeholder {
     &.placeholder {
       @content;
@@ -83,6 +124,7 @@
     }
   }
   
+
   @mixin fluid-fs($min-w, $max-w, $min-fs, $max-fs) {
     $u1: unit($min-w);
     $u2: unit($max-w);
