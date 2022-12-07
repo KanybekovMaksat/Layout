@@ -1,47 +1,159 @@
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
+    @include up(xxl){
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    @include down(xxl){
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    @include down(xl){
+        max-width: 640px;
+        margin: 0 auto;
+    }
+    @include down(lg){
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    @include down(md){
+        max-width: 320px;
+        margin: 0 auto;
+    }
 }
-
+.button{
+    padding: 10px;
+    background: #F47220;
+    box-shadow: 3px 3px 5px rgba(244, 114, 32, 0.4);
+    border-radius: 10px;
+    color: $black
+}
 .header {
     .header-content {
         .header-headline {
             @include center(align);
-
+            .logo{
+                @include down(xl){
+                    width: 50px;
+                    height: 39px;
+                }
+                @include down(lg){
+                    width: 40px;
+                    height: 31px;
+                }
+                @include down(md){
+                    width:  32px;
+                    height: 25px;
+                }
+            }
             .header__dropdown {
-                margin-left: 385px;
-                margin-right: 70px;
+                margin: 0px 70px 0px 385px;
 
                 border: none;
                 outline: none;
+                @include down(xxl){
+                    margin: 0px 117px 0px 136px;
+                }
+                @include down(xl){
+                    margin: 0px 120px 0px 112px;
+                    @include typography(12px, 400, 15px)
+                }
+                @include down(lg){
+                   margin: 0px 100px 0px 33px;
+                }
+                @include down(md){
+                    margin: 0px 8px 0px 30px;
+                }
             }
 
             .header__call {
                 margin-left: 100px;
                 @include center(column);
-
+                @include down(xl){
+                    margin: 0;
+                }
                 .call__link {
                     @include typography(18px, 600, 23px);
                     color: $second-color;
                     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                    @include down(md){
+                        @include typography(12px, 400, 15px)
+                    }
                 }
 
                 .call__subtitle {
                     @include typography(12px, 400, 15px);
                     color: $black;
+                    
+                    @include down(md){
+                        display: none;
+                    }
+                }
+            }
+            .header__burger{
+                display: none;
+                @include down(xl){
+                    margin-left: 62px;
+                    display: block;
+                }
+                @include down(lg){
+                    margin-left: 12px;
+                }
+                @include down(md){
+                    margin-left: 20px;
+                }
+                .header__burger-nav{
+                    position: fixed;
+                    top: 0;
+                    right: 60px;
+                    transition: all .5s ease;
+                    z-index: 99999;
+
+
+                    width: 218px;
+                    height: 371px;
+                    
+                    padding: 10px 0px 20px 20px;
+                    
+                    background: #FFFFFF;
+                    box-shadow: -3px 0px 5px rgba(17, 17, 17, 0.25), 3px 3px 5px rgba(0, 0, 0, 0.25);
+                    border-radius: 10px;
+                    .social-burger__nav{
+                        @include down(xl){
+                            margin-top: 20px;
+                            display: block;
+                        }
+                    }
+                    .header__burger-list{
+                        margin-bottom: 16px;
+                        li,a{
+                            @include typography(14px, 400, 25px);
+                            color: $black;
+                        }
+                    }
+                }
+                .burger-hidden{
+                    margin-top: 9999px;
+                }
+                .burger-show{
+                    margin: 0;
                 }
             }
         }
 
         .nav {
             margin-top: 20px;
-
+            @include down(xl){
+                display: none;
+            }
             .nav__list {
                 @include space(between);
 
                 .nav__item {
                     @include typography(16px, 500, 18px);
-
+                    @include down(xxl){
+                        @include typography(14px, 400, 18px)
+                    }
                     color: $black;
                     .nav__link {
                         @extend .nav__item;
@@ -54,7 +166,9 @@
 
 .social-nav {
     display: flex;
-
+    @include down(xl){
+        display: none;
+    }
     .social__link {
         margin: 0px 5px;
 
@@ -78,22 +192,44 @@
     height: 225px;
 
     background-color: $primary-color;
-
+    @include down(xxl){
+        height: 306px;
+    }
+    @include down(xl){
+        height: 496px;
+    }
+    @include down(lg){
+        height: 548px;
+    }
+    @include down(md){
+        height: 450px;
+    }
     .footer__content {
         display: flex;
-
+        @include down(xxl){
+            margin-bottom: 30px;
+        }
         .footer__wrapper{
             margin-bottom: 25px;
             .footer-logo{
                 margin-bottom: 25px;
+                @include down(xl){
+                    margin-top: 30px;
+                }
             }
             .footer__call-link {
                 @include typography(18px, 600, 23px);
                 color: $black;
+                @include down(lg){
+                    @include typography(13px, 600, 15px)
+                }
             }
 
             .footer__box {
                 display: flex;
+                @include down(xl){
+                    @include flex(column);
+                }
             }
 
             .footer__mail {
@@ -111,31 +247,89 @@
 
             .footer__mail:last-child {
                 margin-left: 30px;
+                @include down(xl){
+                    margin:25px 0px 0px 0px ;
+                }
             }
 
         }
         .footer__wrapper:nth-child(2){
             margin: 19px 0px 0px 45px;
+            @include down(xxl){
+                margin: 19px 0px 0px 9px ;
+            }
+            @include down(xl){
+                margin: 99px 0px 0px 105px;
+            }
+            @include down(lg){
+                margin: 94px 0px 0px 20px;
+            }
             .footer__title{
                 @include typography(14px, 600, 18px);
                 margin-bottom: 20px;
             }
             .footer__text{
-                @include typography(14px, 400, 30px)
+                @include typography(14px, 400, 30px);
             }
         }
         .footer__nav {
             margin: 55px 0px 0px 130px;
             @include flex(column);
+            @include down(xxl){
+                margin: 50px 0px 0px 75px;
+            }
+            @include down(xl){
+                display: none;
+            }
             .footer__nav-link{
                 @include typography(14px, 600, 30px);
                 color: $black;
             }
             .footer__social-nav{
                 margin-top: 20px;
+                @include down(xxl){
+                    display: none;
+                }
+            }
+        }
+        .footer-adaptiv__ul{
+            display: none;
+            margin-top: 99px;
+            @include down(xl){
+                @include flex(column);
+            }
+            @include down(md){
+                display: none;
+            }
+            .footer-adaptive__link{
+                @include typography(14px, 600, 30px);
+                color: $black
             }
         }
     }
-
+    .footer-adaptiv{
+        margin-top: 30px;
+        @include space(between);
+        .footer-adaptiv__copy{
+            @include typography(14px, 400, 18px);
+        }
+        .footer-adaptiv__text{
+            @include typography(14px, 400, 18px);
+        }
+        .footer-adaptive__addres{
+            @include typography(14px, 600, 18px);
+            @include down(lg){
+                display: none;
+            }
+        }
+        .footer-adaptiv__nav{   
+            @include down(xl){
+                display: flex;
+            }
+            @include down(md){
+                display: none;
+            }
+        }
+    }
 
 }
