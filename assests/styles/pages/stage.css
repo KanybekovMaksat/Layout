@@ -1,0 +1,17 @@
+.contact-stage .stage-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+.contact-stage .stage-wrapper .stage-box {
+  display: flex;
+  align-items: center;
+}
+.contact-stage .stage-wrapper .stage-box .stage-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #007198;
+}/*# sourceMappingURL=stage.css.map */

@@ -1,0 +1,20 @@
+@import "../vars";
+@import "../fns";
+@import "../mixins";
+
+
+.contact-stage{
+    .stage-wrapper{
+        @include space(between);
+        .stage-box{
+           @include center(align);
+           .stage-number{
+            @include center(center);
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            background-color: $second-color;
+           }
+        }
+    }
+}

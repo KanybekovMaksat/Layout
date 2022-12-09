@@ -1,0 +1,21 @@
+.equipment-device .device-content .device-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 50px;
+}
+
+.equipment-chemistry .chemistry-content .chemistry-wrapper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.equipment-firms {
+  margin-top: 80px;
+}
+.equipment-firms .firms-content .firms-wrapper {
+  display: flex;
+  justify-content: space-between;
+}/*# sourceMappingURL=equipment.css.map */
