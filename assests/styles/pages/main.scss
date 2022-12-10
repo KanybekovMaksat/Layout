@@ -137,6 +137,10 @@
     .jobs-content{
         @include flex(column);
         align-items: center;
+        .jobs-wrapper{
+            display: flex;
+            justify-content: space-around;
+        }
     }
 }
 .home-feedback{

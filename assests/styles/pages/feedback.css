@@ -1,0 +1,65 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 960px) {
+  .container {
+    max-width: 640px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 640px) {
+  .container {
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+}
+
+.button {
+  padding: 10px;
+  background: #F47220;
+  box-shadow: 3px 3px 5px rgba(244, 114, 32, 0.4);
+  border-radius: 10px;
+  color: #000;
+}
+
+.feedback-hero {
+  height: 100px;
+  background-color: #DAF1F9;
+}
+.feedback-hero .hero-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.feedback-hero .hero-content .hero-wrapper .hero-stars {
+  display: flex;
+  align-items: center;
+}
+
+.feedback-content .content-wrapper .content-item {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #000;
+}
+.feedback-content .content-wrapper .content-item .content-text {
+  max-width: 1040px;
+}/*# sourceMappingURL=feedback.css.map */

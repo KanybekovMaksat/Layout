@@ -1,3 +1,7 @@
+* {
+  font-family: "Montserrat", sans-serif;
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1200px;
@@ -143,6 +147,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.home-jobs .jobs-content .jobs-wrapper {
+  display: flex;
+  justify-content: space-around;
 }
 
 .home-feedback {

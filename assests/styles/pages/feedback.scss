@@ -1,0 +1,58 @@
+@import "../vars";
+@import "../fns";
+@import "../mixins";
+
+.container {
+    @include up(xxl){
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    @include down(xxl){
+        max-width: 960px;
+        margin: 0 auto;
+    }
+    @include down(xl){
+        max-width: 640px;
+        margin: 0 auto;
+    }
+    @include down(lg){
+        max-width: 480px;
+        margin: 0 auto;
+    }
+    @include down(md){
+        max-width: 320px;
+        margin: 0 auto;
+    }
+}
+.button{
+    padding: 10px;
+    background: #F47220;
+    box-shadow: 3px 3px 5px rgba(244, 114, 32, 0.4);
+    border-radius: 10px;
+    color: $black
+}
+
+.feedback-hero{
+    height: 100px;
+    background-color: $primary-color;
+    .hero-content{
+        @include space(between);
+        align-items: center;
+        .hero-wrapper{
+            .hero-stars{
+                @include center(align);
+            }
+        }
+    }
+}
+.feedback-content{
+    .content-wrapper{
+        .content-item{
+            @include space(between);
+            border-top: 1px solid $black;
+            .content-text{
+                max-width: 1040px;
+            }
+        }
+    }
+}
